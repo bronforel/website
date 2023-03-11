@@ -19,7 +19,7 @@ body {
 }
 
 .page-wrapper.full-page {
-    height: calc(100vh);
+    height: 100%;
 }
 
 .logo-panel img {

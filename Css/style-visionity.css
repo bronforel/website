@@ -18,14 +18,14 @@ body {
     color: #fff !important;
 }
 
-.page-wrapper.full-page {
-    height: 100%;
+.logo-panel {
+    width: 80vw;
 }
 
 .logo-panel img {
     animation: 2s zoomIn;
     animation-fill-mode: forwards;
-    width: 70%;
+    width: 80%;
     max-width: 310px;
 }
 

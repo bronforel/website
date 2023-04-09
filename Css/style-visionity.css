@@ -23,14 +23,15 @@ body {
 }
 
 .logo-panel img {
-    animation: 2s zoomIn;
+    animation: 1.2s zoomIn;
     animation-fill-mode: forwards;
     width: 80%;
     max-width: 310px;
+    margin-top: -50px;
 }
 
 .logo-panel h4 {
-    animation: 2s fadeIn;
+    animation: 1.5s fadeIn;
     animation-fill-mode: forwards;
 }
 

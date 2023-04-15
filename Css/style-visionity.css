@@ -7,7 +7,12 @@ body {
     background-color: #333;
     background: radial-gradient(#333, #000);
     font-family: 'Abel', sans-serif;
+    background-repeat: none;
+    background-position: center;
     font-size: 18px;
+    color: #ccc;
+    padding: 0;
+    margin: 0;
 }
 
 .page-wrapper {
@@ -28,13 +33,26 @@ body {
 .logo-panel img {
     animation: 1.2s zoomIn;
     animation-fill-mode: forwards;
-    width: 80%;
-    max-width: 310px;
+    width: 75%;
+    max-width: 280px;
 }
 
 .logo-panel h4 {
     animation: 1.5s fadeIn;
     animation-fill-mode: forwards;
+}
+
+h2 {
+    font-size: 47px;
+    border-bottom: solid 1px #777;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+
+h3 {
+    font-size: 23px;
+    color: #ddd;
+    margin-bottom: 30px;
 }
 
 h4 {
@@ -45,23 +63,119 @@ h4 {
     color: #ccc;
 }
 
-.capabilities-panel {
-    margin-top: 15px;
-    padding-top: 20px;
-    animation: 2.0s fadeIn;
+.menu-panel {
+    position: flex;
+    z-index: 100;
+    padding: 10px;
+    animation: 1.2s fadeIn;
     animation-fill-mode: forwards;
-    border-top: solid 1px #666;
+    animation-delay: 0.8s;
+    opacity: 0;
+    background: rgba(0, 0, 0, .8);
+    border-bottom: solid 1px #777;
+    ;
 }
 
-.capabilities-panel ul {
+.menu-panel.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.menu-panel ul {
     list-style: none;
     display: flex;
+    align-items: center;
     margin: 0;
     padding: 0;
 }
 
-.capabilities-panel ul li {
-    margin: 0 10px;
+.menu-panel ul li {}
+
+.menu-panel li.logo-menu {
+    margin-right: 15px;
+}
+
+.menu-panel li.logo-menu img {
+    margin-top: 5px;
+    width: 150px !important;
+}
+
+.menu-panel ul li a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    border: solid 1px transparent;
+}
+
+.menu-panel ul li a:hover {
+    border: solid 1px #666;
+    cursor: pointer;
+}
+
+.menu-panel ul li a.show-no-link:hover {
+    border: 0 !important;
+}
+
+.content-panel {
+    padding: 20px 10%;
+    width: 100%;
+    max-width: 980px;
+    background-color: rgba(0, 0, 0, .7);
+    height: 100%;
+    box-sizing: border-box;
+}
+
+ul.bulletlist li {
+    line-height: 130%;
+    font-size: 20px;
+}
+
+.full-height-panel {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    border-top: solid 8px #3771c8;
+    border-bottom: solid 4px #f06;
+    position: relative;
+}
+
+#main-panel {
+    display: block;
+    border: 0 !important;
+}
+
+#consultancy-panel {
+    background-image: url('../Images/businessman-ge97d2a408_1920.jpg');
+}
+
+#design-panel {
+    background-image: url('../Images/filmmakers-g87e02338c_1920.jpg');
+}
+
+#development-panel {
+    background-image: url('../Images/pexels-pixabay-270348.jpg');
+}
+
+#design-panel .content-panel {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+@media screen and (min-width:600px) {
+    .top-right {
+        right: 20px;
+        top: 20px;
+    }
+    .top-left {
+        right: unset;
+        top: 20px;
+        left: 20px;
+    }
 }
 
 @keyframes zoomIn {

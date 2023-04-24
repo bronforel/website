@@ -10,7 +10,6 @@ body {
     background-repeat: none;
     background-position: center;
     font-size: 18px;
-    color: #ccc;
     padding: 0;
     margin: 0;
 }
@@ -37,30 +36,44 @@ body {
     max-width: 280px;
 }
 
-.logo-panel h4 {
+.logo-panel .slogan {
     animation: 1.5s fadeIn;
     animation-fill-mode: forwards;
 }
 
 h2 {
     font-size: 47px;
-    border-bottom: solid 1px #777;
+    border-bottom: solid 1px #333;
     margin-bottom: 30px;
     padding-bottom: 30px;
+    text-align: center;
+    margin-top: 0;
 }
 
 h3 {
     font-size: 23px;
-    color: #ddd;
     margin-bottom: 30px;
 }
 
 h4 {
     font-family: 'Abel', sans-serif;
+    font-size: 22px;
+    margin-top: 15px;
+    border-top: solid 1px #333;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+.slogan {
+    font-family: 'Abel', sans-serif;
     font-weight: normal;
     font-size: 25px;
     margin-top: 15px;
     color: #ccc;
+}
+
+h4:first-letter {
+    font-size: 26px;
 }
 
 .menu-panel {
@@ -120,12 +133,22 @@ h4 {
 }
 
 .content-panel {
-    padding: 20px 10%;
+    padding: 40px 50px;
     width: 100%;
-    max-width: 980px;
-    background-color: rgba(0, 0, 0, .7);
-    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    min-height: calc(100% - 60px);
     box-sizing: border-box;
+    margin: auto;
+    color: #bbb;
+}
+
+.content-image {
+    width: 100%;
+}
+
+.content-panel:nth-of-type(even) {
+    margin-left: auto;
+    margin-right: 30px;
 }
 
 ul.bulletlist li {
@@ -134,36 +157,28 @@ ul.bulletlist li {
 }
 
 .full-height-panel {
-    height: 100vh;
-    background-size: cover;
+    min-height: calc(100vh - 60px);
+    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     box-sizing: border-box;
     overflow-x: hidden;
+    position: relative;
+}
+
+.full-height-panel.content {
     border-top: solid 8px #3771c8;
     border-bottom: solid 4px #f06;
-    position: relative;
+    border-radius: 10px;
+    max-width: 780px;
+    margin: auto;
+    margin-bottom: 70px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .4);
 }
 
 #main-panel {
     display: block;
     border: 0 !important;
-}
-
-#consultancy-panel {
-    background-image: url('../Images/businessman-ge97d2a408_1920.jpg');
-}
-
-#design-panel {
-    background-image: url('../Images/filmmakers-g87e02338c_1920.jpg');
-}
-
-#development-panel {
-    background-image: url('../Images/pexels-pixabay-270348.jpg');
-}
-
-#design-panel .content-panel {
-    margin-left: auto;
-    margin-right: 0;
 }
 
 @media screen and (min-width:600px) {

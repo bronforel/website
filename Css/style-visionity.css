@@ -35,14 +35,15 @@
     .logo-panel img {
         animation: 1.2s zoomIn;
         animation-fill-mode: forwards;
-        width: 75%;
-        max-width: 320px;
+        width: 82%;
+        max-width: 220px;
     }
         
     .slogan {
         font-family: 'Abel', sans-serif;
         font-weight: normal;
         margin-top: 15px;
+        font-size:19px;
         color: #aaa;
         text-transform: uppercase;
         animation: 1.5s fadeIn;
@@ -80,6 +81,7 @@
     @media screen and (min-width:600px) {
 
         .logo-panel img {
+            max-width: 320px;
             margin-bottom:10px;
         }
         .slogan {

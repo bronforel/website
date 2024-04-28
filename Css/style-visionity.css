@@ -36,7 +36,7 @@
         animation: 1.2s zoomIn;
         animation-fill-mode: forwards;
         width: 75%;
-        max-width: 320px;
+        max-width: 290px;
     }
         
     .slogan {
@@ -80,6 +80,7 @@
     @media screen and (min-width:600px) {
 
         .logo-panel img {
+            max-width: 320px;
             margin-bottom:10px;
         }
         .slogan {

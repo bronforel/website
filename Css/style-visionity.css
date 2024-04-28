@@ -51,7 +51,7 @@
     
     .footer-sticky {
         position: sticky;
-        bottom:5px;
+        bottom:25px;
     }
     .footer-sticky ul {
         list-style: none;

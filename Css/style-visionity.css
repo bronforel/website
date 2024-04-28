@@ -55,22 +55,15 @@
     }
     .footer-sticky ul {
         list-style: none;
-<<<<<<< Updated upstream
         text-align: left;
         padding:0;
         margin:0 0 0 30px;
-=======
-        text-align: right;
-        padding:0;
-        margin:0 30px 0 30px;
->>>>>>> Stashed changes
     }
     .footer-sticky ul li {
         margin:5px;
         display: inline-block;
         line-height:25px;
         height:25px;
-<<<<<<< Updated upstream
     }
     .footer-sticky a {
         color:#999;
@@ -80,19 +73,6 @@
         vertical-align: middle;
     }
 
-=======
-        font-size:12px;
-    }
-    .footer-sticky a {
-        color:#999;
-        font-size:24px;
-        display: inline-block;
-        margin:0px 5px 0px;
-        vertical-align: middle;
-    }
-
-
->>>>>>> Stashed changes
     .footer-sticky a:hover {
         color:#eee;
     }

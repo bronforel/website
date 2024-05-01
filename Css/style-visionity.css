@@ -3,7 +3,7 @@
 
 :root {
     --main-color1: #2b409e;
-    --main-color2: rgb(211, 30, 120);
+    --main-color2: rgb(196, 0, 131);
     --light-text-color: #bbb;
     --skew-degree: 10deg;
   }
@@ -58,6 +58,11 @@ body {
 
 .vertical-top {
     justify-content:start;
+}
+
+
+.logo-panel img {
+    max-width:350px;
 }
 
 .slogan {
@@ -228,6 +233,15 @@ ul li {
 
 
 @media only screen and (max-width: 600px) {
+
+    .logo-panel img {
+        width:90vw;
+        max-width:290px;
+    }
+    
+    .slogan {
+        font-size:20px;
+    }
 
     .overlay-full-page {
         max-height: none;

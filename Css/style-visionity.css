@@ -263,6 +263,7 @@ ul li {
     }
     .feature h2, .feature:hover h2 {
         font-size: 11px;
+        margin-top:10px;
     }
 
     .overlay-full-page {

@@ -1,117 +1,283 @@
-    @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
-    * {
-        box-sizing: border-box;
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+:root {
+    --main-color1: #2b409e;
+    --main-color2: rgb(211, 30, 120);
+    --light-text-color: #bbb;
+    --skew-degree: 10deg;
+  }
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding:0;
+    margin:0;
+    overflow: hidden;
+    background-color: #222;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:15px;
+    color:#ddd;
+}
+
+.full-height {
+    max-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-row {
+    flex:auto;
+    flex-wrap: wrap;
+    width:100vw;
+}
+.content-row:first-child {
+    flex:3;
+}
+
+.content-row.flash
+{
+    border:solid 0px #444;
+    border-width:1px 0;
+    background-color:#111;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.vertical-top {
+    justify-content:start;
+}
+
+.slogan {
+    font-family: "Quicksand", sans-serif;
+    margin-top:20px;
+    text-align: center;
+    font-size: 23px;
+    font-weight: normal;
+    color:#bbb;
+}
+
+.features-panel {
+    margin:0 0 0 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    width:100vw;
+    height:100%;
+    overflow: hidden;
+    position: relative;
+    padding:0 30px;
+}
+
+.feature {
+    text-align: center;
+    font-weight: normal;
+    flex:1;
+    flex-wrap: wrap;
+    max-width:220px;
+    height:calc(100% - 0px);
+    background-color: #333;
+    border: solid 0px #777;
+    margin:0px;
+    text-decoration: none;
+    transform: skew(var(--skew-degree));
+}
+
+.feature:hover {
+    z-index: 5;
+}
+
+.feature .icon {
+    font-size: 48px;
+    line-height: 60px; 
+}
+
+.feature:hover .icon {
+    font-size: 55px;
+}
+.feature h2 {
+    margin:30px 0 0 0;
+    font-size:18px;
+    font-weight: normal;
+    line-height:25px;
+}
+
+.feature:hover h2 {
+    font-size:22px;
+}
+
+.feature-content {
+    transform: skew(calc(-1 * var(--skew-degree)));
+    transition: 1.0s;
+}
+
+.feature:nth-child(odd) {
+    background-color: #555;
+    color: var(--light-text-color);
+    border-top:solid 5px var(--main-color1);
+    border-bottom:solid 5px var(--main-color1);
+}
+.feature:nth-child(odd):hover {
+    background-color: var(--main-color1);
+    border-color: transparent;
+    color: #fff;
+}
+
+.feature:nth-child(even) {
+    color: var(--main-color2);
+    color: var(--light-text-color);
+    border-top:solid 5px var(--main-color2);
+    border-bottom:solid 5px var(--main-color2);
+}
+.feature:nth-child(even):hover {
+    background-color: var(--main-color2);
+    border-color: transparent;
+    color: #fff;
+    border-bottom:solid 5px var(--main-color2);
+}
+
+.overlay-full-page {
+    position: absolute;
+    visibility: hidden;
+    background-color: rgba(0,0,0,.8);
+    width:calc(100vw - 30px);
+    max-width:900px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height:calc(100vh - 30px);
+    max-height: 550px;
+    border:solid 1px #555;
+    z-index:100;
+    padding:25px 0 0 95px;
+}
+.overlay-full-page.active {
+    visibility: visible;
+}
+
+
+.overlay-full-page h1 {
+    margin:0 0 25px 0;
+}
+
+.overlay-header {
+    color:#ccc;
+    width: 75px;
+    padding:15px 20px;
+    margin:15px 0;
+    position: absolute;
+    height:calc(100% - 30px);
+    left:0;
+    top:0;
+    border-right: solid 1px #555;
+}
+
+.overlay-header i {
+    border:solid 1px #555;
+    padding:5px;
+    border-radius: 50%;
+}
+
+.overlay-header i:hover {
+    color:#333;
+    background:#eee;
+    cursor: pointer;
+}
+
+.overlay-header div {
+    margin-bottom:15px;
+
+}
+
+.overlay-header div:first-child {
+    margin-bottom:80px;
+}
+
+ul li {
+    line-height:30px;
+}
+
+.footer {
+    flex-direction: row;
+}
+.footer .icon {
+    display: block;
+    color:#aaa;
+    font-size:24px;
+    margin:15px;
+    padding:15px;
+    border:solid 1px #555;
+    border-radius: 50%;
+}
+.footer .icon:hover {
+    background-color: #ccc;
+    color:#000;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .overlay-full-page {
+        max-height: none;
     }
-    
-    html {
-        scroll-behavior: smooth;
+    .flash {
+        height:50px !important;
     }
-    
-    body {
-        background-color: #333;
-        background: radial-gradient(#333, #000);
-        font-family: 'Abel', sans-serif;
-        color: #ccc;
-        font-size: 14px;
-        padding: 0;
+    .features-panel {
+        padding:0 !important;
+    }
+    .feature {
+        transform: skew(0deg);
+    }
+    .feature-content {
+        transform: skew(0deg);        
+    }
+    .feature .icon, .feature:hover .icon {
+        font-size: 30px;
+    }
+    .feature h2, .feature:hover h2 {
+        font-size: 11px;
+    }
+
+    .overlay-full-page {
+        padding:70px 0 0 30px;
+    }
+
+    .overlay-header {
+        color:#ccc;
+        padding:10px 20px;
         margin: 0;
-    }
-
-    .page-wrapper {
+        position: absolute;
+        left:0px;
+        top:0%;
+        height:45px;
+        width: 100%;
+        border-bottom: solid 1px #555;
         display: flex;
-        flex-direction: column;
-        height: 89vh;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        overflow: hidden;
-    }
-        
-    .logo-panel {
-        width: 80vw;
-        z-index: 5;
-    }
-    
-    .logo-panel img {
-        animation: 1.2s zoomIn;
-        animation-fill-mode: forwards;
-        width: 82%;
-        max-width: 220px;
-    }
-        
-    .slogan {
-        font-family: 'Abel', sans-serif;
-        font-weight: normal;
-        margin-top: 15px;
-        font-size:19px;
-        color: #aaa;
-        text-transform: uppercase;
-        animation: 1.5s fadeIn;
-        animation-fill-mode: forwards;
-    }
-    
-    .footer-sticky {
-        position: sticky;
-        bottom:25px;
-    }
-    .footer-sticky ul {
-        list-style: none;
-        text-align: left;
-        padding:0;
-        margin:0 0 0 30px;
-    }
-    .footer-sticky ul li {
-        margin:5px;
-        display: inline-block;
-        line-height:25px;
-        height:25px;
-    }
-    .footer-sticky a {
-        color:#999;
-        font-size:20px;
-        display: inline-block;
-        margin:0px 3px 0px;
-        vertical-align: middle;
     }
 
-    .footer-sticky a:hover {
-        color:#eee;
+    .overlay-header .header-content {
+        display: flex;
     }
 
-    @media screen and (min-width:600px) {
-
-        .logo-panel img {
-            max-width: 320px;
-            margin-bottom:10px;
-        }
-        .slogan {
-            font-size: 26px;
-            letter-spacing: 1px;
-        }
-
-
+    .overlay-header .header-content div {
+        margin-right:15px;
+        flex:1;
     }
-    
-    @keyframes zoomIn {
-        0% {
-            transform: scale(0);
-        }
-        70% {
-            transform: scale(1.1);
-        }
-        100% {
-            transform: translateX(1);
-        }
-    }
-    
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        70% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
+    .overlay-header .header-content div:first-child {
+        flex:2;
+    }    
+
+}

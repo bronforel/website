@@ -1,0 +1,139 @@
+/* Algemene stijl voor de body */
+html, body {
+  min-height: 100%;  /* Zorgt ervoor dat de achtergrond de volledige hoogte beslaat, zelfs bij scrollen */
+  margin: 0;  /* Verwijdert de standaardmarges van de browser */
+  padding: 0;  /* Verwijdert de standaard padding van de body */
+  display: flex;  /* Gebruik flexbox om de inhoud netjes te centreren */
+  flex-direction: column;  /* Zet de inhoud in een kolom */
+  justify-content: flex-start;  /* Begin de inhoud bovenaan de pagina */
+  align-items: center;  /* Centreer de inhoud horizontaal */
+  overflow-x: hidden;  /* Zorg ervoor dat er niet horizontaal gescrold kan worden */
+}
+
+/* Algemene stijl voor de body */
+body {
+  background: linear-gradient(135deg, #4a90e2, #8e44ad);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;  /* Voeg padding toe rondom de body */
+  overflow-y: auto;  /* Zorg ervoor dat de pagina verticaal scrollt als de inhoud groter is dan het scherm */
+  flex-grow: 1;  /* Zorg ervoor dat de body het resterende scherm vult */
+}
+
+/* Gebruik flexbox voor container en de drie kolommen */
+.container {
+  display: flex;
+  flex-direction: column;  /* Zet de layout verticaal op mobiel */
+  flex-grow: 1;
+  width: 100%;
+  justify-content: flex-start;
+  padding-bottom: 80px;  /* Ruimte voor de player aan de onderkant */
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding-top: 0;
+}
+
+input,
+#searchInput,
+#countrySelect,
+#searchButton {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+#searchButton {
+  background-color: #ffffff;
+  color: #4a90e2;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#searchButton:hover {
+  background-color: #4a90e2;
+  color: #ffffff;
+}
+
+#stationList {
+  width: 100%;
+  max-height: none;
+  margin-bottom: 80px;
+}
+
+#stationList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#stationList li {
+  padding: 10px;
+  margin: 5px 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#stationList li:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsieve lay-out voor grotere schermen */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;  /* Zet de layout op grotere schermen in een rij */
+    justify-content: space-between;  /* Verspreid de kolommen gelijkmatig */
+  }
+
+  .search-section,
+  #stationList,
+  .player {
+    flex: 1;  /* Zorg ervoor dat alle drie de secties gelijkmatig de beschikbare ruimte verdelen */
+    margin-right: 20px;  /* Ruimte tussen de secties */
+    margin-top: 0;
+  }
+
+  .search-section {
+    margin-right: 0;
+  }
+
+  audio {
+    width:100%;
+  }
+  .player {
+
+    margin-top: 0;
+    display: none;
+    padding:0 15px;
+  }
+}
+
+/* Op mobiele schermen, maak de player vast aan de onderkant */
+@media (max-width: 767px) {
+  .player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 10;
+    display: none;
+  }
+}

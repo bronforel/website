@@ -1,0 +1,151 @@
+.overlay-full-page {
+    position: absolute;
+    visibility: hidden;
+    background-color: var(--main-color1);
+    background-color: #2d2d2dcc;
+    width: calc(100vw - 40px);
+    height: calc(100vh - 40px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid 1px #555;
+    z-index: 100;
+    padding: 0 0 0 0px;
+    border-radius:10px;
+    border:solid 1px #555;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.overlay-full-page.active {
+    visibility: visible;
+}
+
+.overlay-content-panel {
+    display: flex;
+    align-items: center;
+}
+
+.overlay-image-panel {
+    flex:1;
+    max-width: 50%;
+    height:100%;
+    position: relative;
+}
+.overlay-image-panel img {
+    object-fit: cover;
+}
+
+.overlay-slogan {
+    font-size: 36px;
+    font-weight: bold;
+    padding:30px;
+    text-align: center;
+    position:absolute;
+    bottom:40%;
+    color:#fff;
+    width: 100%;
+    text-shadow: 2px 2px rgba(0,0,0,.3);
+}
+
+.overlay-content {
+    flex:2;
+    overflow: auto;
+    height:100%;
+    color:#ddd;
+    padding: 5px 8% 20px 8%;
+    box-sizing: border-box;
+
+}
+
+.overlay-content .lead {
+    margin-bottom:60px;
+}
+
+.overlay-full-page h1 {
+    font-size:28px;
+    padding-bottom:10px;
+}
+
+.overlay-content h2 {
+    color:#eee;
+    font-size:22px;
+    line-height: 140%;
+    margin-bottom:15px;
+    margin-top:25px;
+}
+
+.overlay-content p {
+    line-height:140%;
+}
+
+
+
+.overlay-header {
+    color: #ccc;
+    width: 60px;
+    height:100%;
+    margin: 0 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding:10px 0 0 10px;
+}
+
+.overlay-header i {
+    border: solid 0px #555;
+    display: block;
+    text-align: center;
+    padding: 0px;
+    width:40px;
+    height:40px;
+    line-height: 40px;
+    font-size:25px;
+    border-radius: 50%;
+}
+
+.overlay-header i:hover {
+    color: #333;
+    background: #eee;
+    cursor: pointer;
+}
+
+.overlay-header div {
+    margin-bottom: 15px;
+
+}
+
+.overlay-header div:first-child {
+    margin-bottom: 80px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+   
+    .overlay-full-page {
+        width: calc(100vw);
+        height: calc(100vh);
+        border:0;
+    }    
+
+    .overlay-content-panel {
+        display: flex;
+        flex-direction: column;
+    }
+    .overlay-image-panel {
+        order: -1;
+        width:100%;
+        max-width: none;
+    }
+
+    .overlay-slogan {
+        bottom:40px;
+    }
+    .overlay-image-panel img {
+        width:100vw;
+        opacity: 0.8;
+    }
+
+}

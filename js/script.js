@@ -1,84 +1,61 @@
-const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > window.innerHeight) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+
+
+// Do stuff for anchor content by url
+window.onload = function() {
+    var currentUrl = window.location.href;
+    if (currentUrl.includes('#')) {
+        var anchor = currentUrl.split('#')[1];
+
+        showOverlay(anchor);
     }
+    else {
+        closeOverlays();
+    }
+};
+
+// Do stuff for anchor content by click link
+document.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        var anchor = link.getAttribute('href').replace("#","");
+
+        showOverlay(anchor);
+    });
 });
 
 
-// content staat in aparte content.js
-contents.forEach(content => {
-    contentPanel(content.id, content.image, content.title, content.subTitle, content.leader, content.sections, content.positionX);
-})
+function goHome() {
+    location.hash ? (location.hash = '', closeOverlays()) : null;
+}
 
+function showOverlay(anchor) {
+    anchor && document.getElementById(anchor).classList.add("active");
+}
 
+function closeOverlays() {
+    var overlays = document.querySelectorAll('.overlay-full-page');
+    for (let overlay of overlays) {
+        overlay.classList.remove('active');
+    }
+}
 
-
-function contentPanel(sId, sImage, sTitle, sSubTitle, sLeader, aSections, sPositionX) {
-
-    // fullheight wrapper
-    const eFullHeightPanel = document.createElement("div");
-    eFullHeightPanel.id = sId + "-panel";
-    eFullHeightPanel.className = "content full-height-panel";
-    //eFullHeightPanel.style.backgroundImage = "url(images/content/" + sImage + ")";
-    //eFullHeightPanel.style.backgroundPosition = "top";
-    //eFullHeightPanel.style.backgroundSize = "cover";
-
-    // background image panel
-    const eBackgroundImagePanel = document.createElement("div");
-    eBackgroundImagePanel.className = "background-image-panel";
-    const eBackgroundImage = document.createElement("img");
-    eBackgroundImage.src = "images/content/" + sImage
-
-    eBackgroundImagePanel.appendChild(eBackgroundImage);
-
-    // content wrapper
-    const eContentWrapperPanel = document.createElement("div");
-    eContentWrapperPanel.className = "content-wrapper";
-
-    // content panel
-    const eContentPanel = document.createElement("div");
-    eContentPanel.className = "content-panel " + sPositionX;
-
-    // titel
-    const eTitle = document.createElement("h2");
-    eTitle.innerHTML = sTitle;
-    eTitle.className = "leader";
-
-    // subtitel
-    const eSubTitle = document.createElement("h3");
-    eSubTitle.innerHTML = sSubTitle;
-
-    // leader tekst
-    const eLeader = document.createElement("p");
-    eLeader.className = "leader";
-    eLeader.innerHTML = sLeader;
-
-    // Voeg elementen samen.
-    eFullHeightPanel.appendChild(eBackgroundImagePanel);
-    eFullHeightPanel.appendChild(eContentWrapperPanel);
-    eContentWrapperPanel.appendChild(eContentPanel);
-    eContentPanel.appendChild(eTitle);
-    eContentPanel.appendChild(eSubTitle);
-    eContentPanel.appendChild(eLeader);
-
-
-    aSections.forEach(section => {
-        const eSectionTitle = document.createElement("h4")
-        eSectionTitle.innerHTML = section.title;
-
-        const eSectionText = document.createElement("p");
-        eSectionText.className = "indent";
-        eSectionText.innerHTML = section.text;
-
-        eContentPanel.appendChild(eSectionTitle);
-        eContentPanel.appendChild(eSectionText);
-
-    });
-
-    // voeg toe aan pagina.
-    document.getElementById("content-wrapper-panel").appendChild(eFullHeightPanel);
+function createOverlayHeader(id) {
+    var  header = document.createElement("div");
+    header.classList.add("overlay-header");
+    header.classList.add('center3');
+    var headerContent = document.createElement("div");
+    headerContent.classList.add("header-content");
+    headerContent.innerHTML = "<div class='close'><i class='fa-solid fa-close' onclick='goHome()'></i></div>";
+    console.log(document.getElementById(id));
+    document.getElementById(id).prepend(header);
+    header.prepend(headerContent);
 
 }
+
+function callMe() {
+    document.location.href="tel:+31 617 144 366";
+}
+function mailMe() {
+    document.location.href="mailto:vaarhorst@home.nl";
+}
+createOverlayHeader('design');
+createOverlayHeader('development');

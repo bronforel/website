@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radio Station Player</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Zoek en landen selectie -->
+    <div class="search-section">
+      <h2>Radio Station Finder</h2>
+      <input type="text" id="searchInput" placeholder="Zoek naar een zender..." />
+      <select id="countrySelect">
+        <option value="">Kies een land...</option>
+      </select>
+      <button id="searchButton">Zoek</button>
+    </div>
+
+    <!-- Lijst van radiostations -->
+    <div id="stationList">
+      <h2>Resultaten</h2>
+      <ul id="stations"></ul>
+    </div>
+
+    <!-- Player sectie -->
+    <div id="player" class="player">
+      <h2>Nu luisteren:</h2>
+      <p id="currentStation">Geen station geselecteerd</p>
+      <p id="currentVotes">...</p>
+      <audio id="audioPlayer" controls>
+        <source id="audioSource" src="" type="audio/mpeg" />
+        Je browser ondersteunt geen audio.
+      </audio>
+      <p id="metadata"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

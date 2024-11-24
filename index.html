@@ -1,8 +1,12 @@
 <html>
 
 <head>
+    <!-- Responsive-->
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styling and icons-->
     <link rel="stylesheet" href="Css/style-visionity.css">
+    <link rel="stylesheet" href="Css/overlay.css">
     <script src="https://kit.fontawesome.com/70f21240d0.js"></script>
 </head>
 
@@ -19,12 +23,12 @@
         <div class="content-row center flash">
             <div class="features-panel">
                 <div class="feature center">
-                    <div class="feature-content" >
+                    <div class="feature-content">
                         <i class="icon fa-solid fa-pen-ruler"></i>
                         <h2>Design</h2>
                     </div>
                 </div>
-                <div class="feature center">
+                <div  class="feature center">
                     <div class="feature-content">
                         <i class="icon fa-solid fa-file-code"></i>
                         <h2>Development</h2>
@@ -50,55 +54,39 @@
         </div>
     </div>
     <div id="design" class="overlay-full-page">
-        <h1>Design</h1>
-        <ul>
-            <li>Webdesign</li>
-            <li>Software design</li>
-        </ul>
+
+        <div class="overlay-content-panel">
+            <div class="overlay-content">
+                <h1 class="light-1">Impact met design</h1>
+                <div class="lead">
+                    <p>Wij geloven we in de kracht van creativiteit, de schoonheid van eenvoud en de impact van doordacht design. Of het nu gaat om een website, een brochure of een complete merkidentiteit, we streven naar tijdloze en effectieve oplossingen.</p>
+                    <ul>
+                        <li>Design Sytems</li>
+                        <li>Wireframing en Prototyping</li>
+                        <li>Presentaties en Marketingmateriaal</li>
+                    </ul>
+                </div>
+                <h2>Creativiteit en Innovatie</h2>
+                <p>Wij geloven in het vinden van unieke oplossingen en het pushen van de grenzen van creativiteit. Of
+                    het nu gaat om het ontwerpen van een logo, een infographic of een compleet design system, Wij zijn
+                    altijd op zoek naar nieuwe manieren om impact te maken.</p>
+            </div>
+
+        </div>
+
     </div>
     <div id="development" class="overlay-full-page">
-        <h1>Development</h1>
-        <ul>
-            <li>Functional Consulting</li>
-            <li>Product management</li>
-        </ul>
+        <div class="overlay-content">
+            <h1>Development</h1>
+            <ul>
+                <li>Frontend development</li>
+                <li>Product management</li>
+            </ul>
+        </div>
     </div>
 </body>
-<script>
-    function showOverlay(sId) {
-        document.getElementById(sId).classList.add("active");
-    }
 
-    function closeOverlays() {
-        var overlays = document.querySelectorAll('.overlay-full-page');
-        for (let element of overlays) {
-            element.classList.remove('active');
-        }
-    }
-
-    function createOverlayHeader(id) {
-        var  header = document.createElement("div");
-        header.classList.add("overlay-header");
-        header.classList.add('center3');
-        var headerContent = document.createElement("div");
-        headerContent.classList.add("header-content");
-        headerContent.innerHTML = "<div><i class='fa-solid fa-left-long' onclick='closeOverlays()'></i></div>";
-        headerContent.innerHTML += "<div><i class='fa-solid fa-phone' onclick='callMe()'></i></div>";
-        headerContent.innerHTML += "<div><i class='fa-solid fa-envelope' onclick='closeOverlays()'></i></div>";
-        console.log(document.getElementById(id));
-        document.getElementById(id).prepend(header);
-        header.prepend(headerContent);
-
-    }
-
-    function callMe() {
-        document.location.href="tel:+31 617 144 366";
-    }
-    function mailMe() {
-        document.location.href="mailto:vaarhorst@home.nl";
-    }
-    createOverlayHeader('design');
-    createOverlayHeader('development');
-</script>
+<!-- Javacript -->
+<script src="Js/script.js"></script>
 
 </html>
